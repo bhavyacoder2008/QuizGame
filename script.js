@@ -165,22 +165,60 @@ const QuizQuestions = [
   }
 ];
 
+let count = 0;
 
 const start = document.querySelector(".start")
 const options = document.querySelector(".option-container")
 const question = document.querySelector(".question")
-let count = 0;
-
-start.addEventListener("click",() => {
-    document.querySelector(".home").style.display = "none"
-    // document.querySelector(".game-start").style.display = "flex"
-})
-
-question.textContent = QuizQuestions[0]["question"]
+const next = document.querySelector(".next")
+const check = document.querySelector(".check")
 
 const op_list = [...options.children]
 
-op_list[0].textContent = QuizQuestions[0]["options"][0]
-op_list[1].textContent = QuizQuestions[0]["options"][1]
-op_list[2].textContent = QuizQuestions[0]["options"][2]
-op_list[3].textContent = QuizQuestions[0]["options"][3]
+options.addEventListener("click", (e) => {
+  op_list.forEach((item) => item.classList.remove('checked'))
+  e.target.classList.add('checked')
+})
+
+start.addEventListener("click",() => {
+    document.querySelector(".home").style.display = "none"
+    document.querySelector(".game-start").style.display = "flex"
+})
+
+
+question.textContent = QuizQuestions[count]["question"]
+
+
+op_list[0].textContent = QuizQuestions[count]["options"][0]
+op_list[1].textContent = QuizQuestions[count]["options"][1]
+op_list[2].textContent = QuizQuestions[count]["options"][2]
+op_list[3].textContent = QuizQuestions[count]["options"][3]
+
+
+
+next.addEventListener("click",()=>{
+    count++
+    question.textContent = QuizQuestions[count]["question"]
+
+    op_list[0].textContent = QuizQuestions[count]["options"][0]
+    op_list[1].textContent = QuizQuestions[count]["options"][1]
+    op_list[2].textContent = QuizQuestions[count]["options"][2]
+    op_list[3].textContent = QuizQuestions[count]["options"][3]
+
+    op_list.forEach(element => {
+        element.style.backgroundColor = "#fff" 
+    });
+})
+
+check.addEventListener("click",()=>{
+    if(document.querySelector(".checked").textContent === QuizQuestions[count]["answer"]){
+        document.querySelector(".checked").style.backgroundColor = "green"
+    }
+    else{
+        document.querySelector(".checked").style.backgroundColor = "red"
+
+    }
+})
+
+
+
