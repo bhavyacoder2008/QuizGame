@@ -1,0 +1,146 @@
+body{
+    margin: 0;
+    /* height: 100dvh; */
+    min-height: 100dvh;
+    width: 100dvw;
+    background-color: #f5f5f5;
+    font-family: Poppins;
+}
+
+.home{
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+
+.quiz-img-container{
+    width: 50%;
+    margin-top: 110px ;
+}
+
+
+img{
+    height: 100%;
+    width: 100%;
+}
+
+.start{
+    margin-top: 110px;
+    font-size: 2.3rem;
+    cursor: pointer;
+    background-color: #35BD3A;
+    color: white;
+    font-family: Poppins;
+    font-weight: 500;
+    padding: .67rem;
+    border-radius: 20px;
+}
+
+.start:hover{
+    background-color: orange;
+    box-shadow: 2px 2px 2px 2px black;
+}
+
+.game-start{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #CCE2C2;
+    padding-top: 30px;
+}
+
+.header{
+    display: grid;
+    width: 80%;
+    /* background-color: aqua; */
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
+}
+
+.banner-container{
+    height: 100px;
+    width: 180px;
+}
+
+.q-num{
+    height: 40px;
+    max-width: 50px;
+    justify-self: end;
+    font-size: 1.6rem;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 20%;
+    background-color: #FEC33D;
+    border: 4px solid red;
+    /* background-color: #fff; */
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.question{
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 3px 3px 3px 3px rgba(60, 148, 143, 0.541);
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    background-color: #f5f5f5;
+    margin-bottom: 40px;
+}
+
+.option-container{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: rgb(48, 221, 255);
+    padding: 40px;
+    width: 70%;
+    border-radius: 10px;
+
+}
+
+.option{
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.option-container .checked{
+    background-color: burlywood;
+}
+
+.option:hover{
+    background-color: burlywood;
+    border: 2px solid ;
+}
+
+.check-next{
+    display: flex;
+    background-color: #CCE2C2;
+    justify-content: end;
+    width: 100%;
+}
+
+
+
+.check-next div{
+    background-color: #fff;
+    margin-top: 20px;
+    margin-right: 30px;
+    padding: 10px;
+    margin-bottom: 41px;
+    background-color: rgb(20, 255, 216);
+    color: maroon;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.check-next div:hover{
+    border: 4px solid black;
+}
