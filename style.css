@@ -1,3 +1,9 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body{
     margin: 0;
     /* height: 100dvh; */
@@ -67,8 +73,8 @@ img{
 }
 
 .q-num{
-    height: 40px;
-    max-width: 50px;
+    height: 50px;
+    max-width: 150px;
     justify-self: end;
     font-size: 1.6rem;
     padding: 10px;
