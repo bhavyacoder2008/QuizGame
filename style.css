@@ -18,7 +18,6 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    display: none;
 }
 
 .quiz-img-container{
@@ -52,7 +51,7 @@ img{
 .game-start{
     height: 100%;
     width: 100%;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     background-color: #CCE2C2;
@@ -121,6 +120,14 @@ img{
     background-color: burlywood;
 }
 
+.option-container .correct{
+    background-color: green;
+}
+
+.option-container .incorrect{
+    background-color: red;
+}
+
 .option:hover{
     background-color: burlywood;
     border: 2px solid ;
@@ -146,6 +153,11 @@ img{
     border-radius: 10px;
     cursor: pointer;
 }
+
+.check-next div:hover{
+    border: 4px solid black;
+}
+
 
 .check-next div:hover{
     border: 4px solid black;
