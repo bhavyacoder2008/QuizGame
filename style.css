@@ -163,3 +163,9 @@ img{
 .check-next div:hover{
     border: 4px solid black;
 }
+
+@media(max-width:900px){
+    *{
+        overflow: scroll;
+    }
+}
