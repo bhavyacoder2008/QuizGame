@@ -172,6 +172,7 @@ const options = document.querySelector(".option-container");
 const question = document.querySelector(".question");
 const next = document.querySelector(".next");
 const check = document.querySelector(".check");
+const prev = document.querySelector(".prev")
 
 const op_list = [...options.children];
 
@@ -195,11 +196,13 @@ op_list[3].textContent = QuizQuestions[count]["options"][3];
 
 document.querySelector(".q").textContent = 1;
 
+
 next.addEventListener("click", () => {
   count++;
+  console.log(count)
   if (count >= QuizQuestions.length) return;
 
-  document.querySelector(".q").textContent = count + 1;
+  document.querySelector(".q").textContent++;
   question.textContent = QuizQuestions[count]["question"];
 
   op_list[0].textContent = QuizQuestions[count]["options"][0];
@@ -214,6 +217,27 @@ next.addEventListener("click", () => {
   });
 });
 
+prev.addEventListener("click", () => {
+  if (count <= 0) {
+    count=0
+    alert("Pahala question hai ye")
+    return;
+  }
+  count--
+  document.querySelector(".q").textContent--;
+  question.textContent = QuizQuestions[count]["question"];
+
+  op_list[0].textContent = QuizQuestions[count]["options"][0];
+  op_list[1].textContent = QuizQuestions[count]["options"][1];
+  op_list[2].textContent = QuizQuestions[count]["options"][2];
+  op_list[3].textContent = QuizQuestions[count]["options"][3];
+
+  op_list.forEach((element) => {
+    element.classList.remove("checked");
+    element.classList.remove("correct")
+    element.classList.remove("incorrect")
+  });
+});
 check.addEventListener("click", () => {
   let flag = false;
   op_list.forEach((item) => {
@@ -228,12 +252,17 @@ check.addEventListener("click", () => {
 
   if (document.querySelector(".checked").textContent === QuizQuestions[count]["answer"]){
     document.querySelector(".checked").classList.add("correct")
+    setTimeout(() => {
+      next.click()
+    }, 800);
   }
 
   else{
     document.querySelector(".checked").classList.add("incorrect")
+    setTimeout(() => {
+      next.click()
+    }, 2500);
   }
-
-
 });
+
 
