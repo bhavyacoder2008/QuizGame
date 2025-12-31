@@ -176,7 +176,7 @@ img{
     .q-num{
         border: 2px solid red;
         height: 40px;
-        width: 54px;
+        min-width: 54px;
         font-size: 16px;
     }
 
