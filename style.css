@@ -7,8 +7,7 @@
 
 body{
     margin: 0;
-    /* height: 100dvh; */
-    min-height: 100dvh;
+    height: 100dvh;
     width: 100dvw;
     background-color: #f5f5f5;
     font-family: Poppins;
@@ -122,7 +121,7 @@ img{
 }
 
 .option-container .correct{
-    background-color: green;
+    background-color: lightgreen;
 }
 
 .option-container .incorrect{
@@ -160,12 +159,29 @@ img{
 }
 
 
-.check-next div:hover{
-    border: 4px solid black;
-}
-
 @media(max-width:900px){
     *{
-        overflow: scroll;
+        overflow: hidden;
+    }
+
+    .header{
+        grid-template-rows: repeat(1,1fr);
+    }
+
+    .option-container{
+        height: 300px;
+        font-size: 10px;
+    }
+
+    .q-num{
+        border: 2px solid red;
+        height: 40px;
+        width: 54px;
+        font-size: 16px;
+    }
+
+    .banner-container{
+        height: 54px;
+        width: 100px;
     }
 }
